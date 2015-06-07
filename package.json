@@ -25,13 +25,32 @@
   "keywords": [
     "compute.io",
     "compute",
-    "computation"
+    "computation",
+    "linear",
+    "algebra",
+    "linear algebra",
+    "mathematics",
+    "math",
+    "matrix",
+    "matrices",
+    "transpose",
+    "data structure",
+    "dstructs",
+    "array",
+    "arrays",
+    "reshape"
   ],
   "bugs": {
     "url": "https://github.com/compute-io/transpose/issues"
   },
-  "dependencies": {},
+  "dependencies": {
+    "compute-array-constructors": "^1.0.0",
+    "validate.io-boolean-primitive": "^1.0.0",
+    "validate.io-matrix-like": "^1.0.2",
+    "validate.io-object": "^1.0.4"
+  },
   "devDependencies": {
+    "dstructs-matrix": "^2.0.0",
     "chai": "3.x.x",
     "mocha": "2.x.x",
     "coveralls": "^2.11.1",
