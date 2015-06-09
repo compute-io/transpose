@@ -2,7 +2,7 @@ Transpose
 ===
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Dependencies][dependencies-image]][dependencies-url]
 
-> Computes the transpose of a [matrix](https://github.com/dstructs/matrix).
+> Computes the [transpose](http://en.wikipedia.org/wiki/Transpose) of a [matrix](https://github.com/dstructs/matrix).
 
 
 ## Installation
@@ -22,7 +22,7 @@ var transpose = require( 'compute-transpose' );
 
 #### transpose( x[, opts] )
 
-Computes the transpose of a [matrix](https://github.com/dstructs/matrix).
+Computes the [transpose](http://en.wikipedia.org/wiki/Transpose) of a [matrix](https://github.com/dstructs/matrix).
 
 ``` javascript
 var matrix = require( 'dstructs-matrix' );
