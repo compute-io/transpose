@@ -101,6 +101,42 @@ describe( 'compute-transpose', function tests() {
 				assert.strictEqual( t.get( i, j ), mat.get( j, i ) );
 			}
 		}
+
+		// Flip the matrix horizontally and then transpose...
+		mat.strides[ 1 ] *= -1;
+		mat.offset = mat.strides[ 0 ] - 1;
+
+		t = transpose( mat );
+
+		for ( i = 0; i < nRows; i++ ) {
+			for ( j = 0; j < nCols; j++ ) {
+				assert.strictEqual( t.get( i, j ), mat.get( j, i ) );
+			}
+		}
+
+		// Flip the matrix vertically and then transpose...
+		mat.strides[ 0 ] *= -1;
+		mat.offset = mat.length - 1;
+
+		t = transpose( mat );
+
+		for ( i = 0; i < nRows; i++ ) {
+			for ( j = 0; j < nCols; j++ ) {
+				assert.strictEqual( t.get( i, j ), mat.get( j, i ) );
+			}
+		}
+
+		// Flip the matrix horizontally and then transpose...
+		mat.strides[ 1 ] *= -1;
+		mat.offset = mat.length + mat.strides[ 0 ];
+
+		t = transpose( mat );
+
+		for ( i = 0; i < nRows; i++ ) {
+			for ( j = 0; j < nCols; j++ ) {
+				assert.strictEqual( t.get( i, j ), mat.get( j, i ) );
+			}
+		}
 	});
 
 	it( 'should transpose and mutate the input matrix', function test() {
@@ -124,6 +160,45 @@ describe( 'compute-transpose', function tests() {
 		for ( i = 0; i < nRows; i++ ) {
 			for ( j = 0; j < nCols; j++ ) {
 				assert.strictEqual( t.get( i, j ), copy.get( j, i ) );
+			}
+		}
+
+		// Flip the matrix horizontally and then transpose...
+		mat = t;
+		mat.strides[ 1 ] *= -1;
+		mat.offset = mat.strides[ 0 ] - 1;
+
+		t = transpose( mat );
+
+		for ( i = 0; i < nRows; i++ ) {
+			for ( j = 0; j < nCols; j++ ) {
+				assert.strictEqual( t.get( i, j ), mat.get( j, i ) );
+			}
+		}
+
+		// Flip the matrix vertically and then transpose...
+		mat = t;
+		mat.strides[ 0 ] *= -1;
+		mat.offset = mat.length - 1;
+
+		t = transpose( mat );
+
+		for ( i = 0; i < nRows; i++ ) {
+			for ( j = 0; j < nCols; j++ ) {
+				assert.strictEqual( t.get( i, j ), mat.get( j, i ) );
+			}
+		}
+
+		// Flip the matrix horizontally and then transpose...
+		mat = t;
+		mat.strides[ 1 ] *= -1;
+		mat.offset = mat.length + mat.strides[ 0 ];
+
+		t = transpose( mat );
+
+		for ( i = 0; i < nRows; i++ ) {
+			for ( j = 0; j < nCols; j++ ) {
+				assert.strictEqual( t.get( i, j ), mat.get( j, i ) );
 			}
 		}
 	});
